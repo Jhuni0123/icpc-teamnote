@@ -1,21 +1,16 @@
 #include <stdio.h>
+#include <algorithm>
 #include <vector>
 #include <queue>
-#include <algorithm>
 using namespace std;
 typedef pair<int,int> pii;
-typedef long long ll;
 const int INF = 2147483647;
-const int mod = 1000000007;
 
-//Counter Clock-Wise
-int ccw(int x1,int x2,int x3,int y1,int y2,int y3){
-    int t = x1*y2+x2*y3+x3*y1;
-    t = t - y1*x2-y2*x3-y3*x1;
-    return t;
-}
-//dijkstra
-void dijkstra(int k){
+int n,m,a,b,c;
+int d[1111];
+vector<pii> g[1111];
+
+void dijk(int k){
 	for(int i=1;i<=n;i++){
 		d[i]=INF;
 	}
@@ -34,4 +29,16 @@ void dijkstra(int k){
 			}
 		}
 	}
+}
+int main(){
+	scanf("%d%d",&n,&m);
+	for(int i=0;i<m;i++){
+		scanf("%d%d%d",&a,&b,&c);
+		g[a].push_back(pii(b,c));
+	}
+	scanf("%d%d",&a,&b);
+
+	dijk(a);
+	
+	printf("%d\n",d[b]);
 }

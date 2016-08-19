@@ -29,6 +29,13 @@ typedef struct IT{
     }
 
     int update(int i,int x,int n,int nl,int nr){
-      //  if(i<nl&&nr<i)
+        if(i<nl&&nr<i)return mx[n];
+        if(nl==nr)return mx[n]=x;
+        int m = (l+r)/2;
+        return mx[n]=max(update(i,x,n*2,nl,m), update(i,x,n*2+1,m+1,nr));
+    }
+    
+    int update(int i, int x){
+        return update(i,x,1,0,n-1);
     }
 }IT;

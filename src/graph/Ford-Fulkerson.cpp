@@ -28,6 +28,7 @@ int flow(int s,int d,int mn){
     return 0;
 }
 
+// small n
 vecetor<int> v[5010];
 int flow[5010][5010];
 int ford(int s,int d,int mn){

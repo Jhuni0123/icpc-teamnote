@@ -10,7 +10,7 @@ int n,m,a,b,c;
 int d[1111];
 vector<pii> g[1111];
 
-void dijk(vector<pii>* g,int *d,int n,int k){ // 시작점:k 
+void dijk(vector<pii>* g,int *d,int n,int k){ // start from k 
     for(int i=0;i<n;i++){
         d[i]=INF;
     }
@@ -29,16 +29,4 @@ void dijk(vector<pii>* g,int *d,int n,int k){ // 시작점:k
             }
         }
     }
-}
-int main(){
-    scanf("%d%d",&n,&m);
-    for(int i=0;i<m;i++){
-        scanf("%d%d%d",&a,&b,&c);
-        g[a].push_back(pii(b,c));
-    }
-    scanf("%d%d",&a,&b);
-
-    dijk(g,d,n,a);
-    
-    printf("%d\n",d[b]);
 }

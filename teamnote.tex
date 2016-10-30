@@ -1,0 +1,250 @@
+% !TEX encoding = UTF-8 Unicode
+\documentclass[10pt,landscape,a4paper,twocolumn]{article}
+
+\setlength{\columnsep}{20pt}
+
+\usepackage[left=1.2cm, right=1.2cm, top=1cm, bottom=1.3cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fontspec}
+\usepackage{kotex}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{listings}
+\usepackage{comment}
+\usepackage{import}
+\usepackage{wrapfig}
+\usepackage{url}
+\usepackage{array}
+\usepackage[normal]{engord}
+\usepackage[svgnames,table]{xcolor}
+
+\setmonofont{SourceCodePro-Regular}
+\setmainhangulfont{NanumMyeongjo}
+\setlength\parindent{0pt}
+\usepackage[parfill]{parskip}
+
+\definecolor{dkgrey}{RGB}{127, 127, 127}
+
+\lstset{
+    basicstyle=\footnotesize\ttfamily,
+    breaklines=true,
+    breakindent=1.1em,
+%   numbers=left,
+%   numberstyle=\footnotesize\ttfamily\color{dkgrey},
+%   numbersep=5pt
+%   frame=trbl
+}
+
+
+\begin{document}
+\tableofcontents
+
+
+\section{Setting}
+
+\subsection{vimrc}
+%\lstinputlisting{src/setting/vimrc}
+
+
+\section{Math}
+
+%\subsection{Basic Arithmetic}
+%\lstinputlisting{src/math/basic-arithmetic.cpp}
+
+%\subsection{Sieve Methods : Prime, Divisor, Euler phi}
+%\lstinputlisting{src/math/sieve.cpp}
+
+%\subsection{Primality Test}
+%\lstinputlisting{src/math/primality-test.cpp}
+
+%\subsection{Chinese Remainder Theorem}
+%\lstinputlisting{src/math/chinese-remainder.cpp}
+
+%\subsection{Rational Number Class}
+%\lstinputlisting{src/math/rational.cpp}
+\begin{comment}
+\subsection{Kirchoff's Theorem}
+
+ê·žëíì ì€íšë ížëŠ¬ì ê°ìë¥Œ êµ¬íë ì ëŠ¬.
+
+ë¬Ží¥ ê·žëíì Laplacian matrix $L$ë¥Œ ë§ë ë€. ìŽê²ì (ì ì ì ì°šì ëê° íë ¬) - (ìžì íë ¬)ìŽë€.
+$L$ìì íê³Œ ìŽì íëì© ì ê±°í ê²ì $L'$ëŒ íì. ìŽë í/ìŽìŽë  êŽê³ ìë€.
+ê·žëíì ì€íšë ížëŠ¬ì ê°ìë $det(L')$ìŽë€.
+\end{comment}
+
+%\subsection{Fast Fourier Transform}
+%\lstinputlisting{src/math/fft.cpp}
+
+%\subsection{Matrix Operations}
+%\lstinputlisting{src/math/matrix-operations.cpp}
+
+%\subsection{Gaussian Elimination}
+%\lstinputlisting{src/math/gaussian.cpp}
+
+%\subsection{Simplex Algorithm}
+%\lstinputlisting{src/math/simplex.cpp}
+
+
+\section{Data Structure}
+
+%\subsection{Order statistic tree}
+%\lstinputlisting{src/data-structure/order-statistic-tree.cpp}
+
+%\subsection{Fenwick Tree}
+%\lstinputlisting{src/data-structure/fenwick-tree.cpp}
+
+%\subsection{Segment Tree with Lazy Propagation}
+%\lstinputlisting{src/data-structure/segtree-lazyprop.cpp}
+
+%\subsection{Persistent Segment Tree}
+%\lstinputlisting{src/data-structure/persistent-segtree.cpp}
+
+%\subsection{Splay Tree}
+%\lstinputlisting{src/data-structure/splay-tree.cpp}
+
+%\subsection{Link/Cut Tree}
+
+\begin{comment}
+\section{DP}
+
+\subsection{Convex Hull Optimization}
+\subsubsection{requirement}
+$O(n^{2}) \to O(n\log{n})$
+
+ì¡°ê±Ž 1) DP ì íì êŒŽ
+
+$D[i] = \min_{j<i}( D[j] + b[j] * a[i] )$
+
+ì¡°ê±Ž 2) $b[j] \leq b[j+1]$
+
+í¹ìì¡°ê±Ž) $a[i] \leq a[i+1]$ ë ë§ì¡±íë ê²œì°, ë§ì§ë§ ì¿ŒëŠ¬ì ìì¹ë¥Œ ì ì¥íŽëë©Ž ìŽë¶ê²ììŽ íìììŽì§êž° ëë¬žì amortized $O(n)$ ì íŽê²°í  ì ìì
+\subsubsection{Source Code}
+\lstinputlisting{src/miscellaneous/convexhulldp.cpp}
+
+\subsection{Divide \& Conquer Optimization}
+
+$O(kn^{2}) \to O(kn\log{n})$
+
+ì¡°ê±Ž 1) DP ì íì êŒŽ
+
+$D[t][i] = \min_{j<i}( D[t-1][j] + C[j][i] )$
+
+ì¡°ê±Ž 2) $A[t][i]$ë $D[t][i]$ì ëµìŽ ëë ìµìì $j$ëŒ í  ë, ìëì ë¶ë±ìì ë§ì¡±íŽìŒ íš
+
+$A[t][i] \leq A[t][i+1]$
+
+ì¡°ê±Ž 2-1) ë¹ì©$C$ê° ë€ìì ì¬ê°ë¶ë±ìì ë§ì¡±íë ê²œì°ë ì¡°ê±Ž 2)ë¥Œ ë§ì¡±íê² ëš
+
+$C[a][c] + C[b][d] \leq C[a][d] + C[b][c] \phantom{1} (a \leq b \leq c \leq d)$
+
+\subsection{Knuth Optimization}
+
+$O(n^{3}) \to O(n^{2})$
+
+ì¡°ê±Ž 1) DP ì íì êŒŽ
+
+$D[i][j] = \min_{i<k<j}( D[i][k] + D[k][j] ) + C[i][j]$
+
+ì¡°ê±Ž 2) ì¬ê° ë¶ë±ì
+
+$C[a][c] + C[b][d] \leq C[a][d] + C[b][c] \phantom{1} (a \leq b \leq c \leq d)$
+
+ì¡°ê±Ž 3) ëšì¡°ì±
+
+$C[b][c] \leq C[a][d] \phantom{1} (a \leq b \leq c \leq d)$
+
+ê²°ë¡ ) ì¡°ê±Ž 2, 3ì ë§ì¡±íë€ë©Ž  $A[i][j]$ë¥Œ $D[i][j]$ì ëµìŽ ëë ìµìì $k$ëŒ í  ë, ìëì ë¶ë±ìì ë§ì¡±íê² ëš
+
+$A[i][j-1] \leq A[i][j] \leq A[i+1][j]$
+
+3ì€ ë£šíë¥Œ ëëŠŽ ë ì ì¡°ê±Žì ìŽì©íë©Ž ìµì¢ì ìŒë¡ ìê°ë³µì¡ëê° $O(n^{2})$ ìŽ ëš
+\end{comment}
+\section{Graph}
+
+%\subsection{SCC (Tarjan)}
+%\lstinputlisting{src/graph/scc-tarjan.cpp}
+
+%\subsection{SCC (Kosaraju)}
+%\lstinputlisting{src/graph/scc-kosaraju.cpp}
+\begin{comment}
+\subsection{2-SAT}
+
+$(b_{x} \lor b_{y}) \land (\neg b_{x} \lor b_{z}) \land (b_{z} \lor \neg b_{x}) \land \cdots$ ê°ì formì 2-CNFëŒê³  íš. ì£ŒìŽì§ 2-CNF ìì ì°žìŒë¡ íë $\{ b_1, b_2, \cdots \}$ ê° ì¡Žì¬íëì§, ì¡Žì¬íë€ë©Ž ê·ž ê°ì ë¬Žììžì§ êµ¬íë ë¬žì ë¥Œ 2-SATìŽëŒ íš.
+
+boolean variable $b_{i}$ ë§ë€ $b_{i}$ë¥Œ ëíëŽë ì ì , $\neg b_{i} $ë¥Œ ëíëŽë ì ì  2ê°ë¥Œ ë§ëŠ. ê° clause $b_{i} \lor b_{j}$ ë§ë€ $\neg b_{i} \to b_{j}$, $\neg b_{j} \to b_{i}$ ìŽë ê² edgeë¥Œ ìŽìŽì€. ê·žë ê² ë§ë  ê·žëíìì SCCë¥Œ ë€ êµ¬íš. ìŽë€ SCC ìì $b_{i}$ ì $\neg b_{i}$ê° ê°ìŽ í¬íšëìŽìë€ë©Ž íŽê° ì¡Žì¬íì§ ìì. ìëëŒë©Ž íŽê° ì¡Žì¬íš.
+
+íŽê° ì¡Žì¬í  ë êµ¬ì²Žì ìž íŽë¥Œ êµ¬íë ë°©ë². ììì SCCë¥Œ êµ¬íë©Žì SCC DAGë¥Œ ë§ë€ìŽì€ë€. ê±°êž°ì ììì ë ¬ì í í, ìììë¶í° SCCë¥Œ íëì© ëŽì€ë€. íì¬ ë³Žê³ ìë SCCì $b_{i}$ê° ìíŽìëë° ìê° $\neg b_{i}$ë³Žë€ ëšŒì  ë±ì¥íë€ë©Ž $b_{i} = \mathrm{false}$, ë°ëì ê²œì°ëŒë©Ž $b_{i} = \mathrm{true}$, ìŽë¯ž ê°ìŽ assignëìë€ë©Ž pass.
+\end{comment}
+%\subsection{BCC, Cut vertex, Bridge}
+%\lstinputlisting{src/graph/bcc.cpp}
+
+%\subsection{Shortest Path Faster Algorithm}
+%\lstinputlisting{src/graph/spfa.cpp}
+
+%\subsection{Lowest Common Ancestor}
+%\lstinputlisting{src/graph/lca.cpp}
+
+%\subsection{Heavy-Light Decomposition}
+%\lstinputlisting{src/graph/hld.cpp}
+
+%\subsection{Bipartite Matching (Hopcroft-Karp)}
+%\lstinputlisting{src/graph/bipartite-matching-hopcroft.cpp}
+
+%\subsection{Maximum Flow (Dinic)}
+%\lstinputlisting{src/graph/maxflow-dinic.cpp}
+
+\subsection{Min-cost Maximum Flow}
+\lstinputlisting{src/graph/mcmf.cpp}
+
+
+\section{Geometry}
+
+\subsection{Operations}
+\lstinputlisting{src/geometry/geo_operations.cpp}
+
+%\subsection{Compare angles}
+
+%\subsection{Convex Hull}
+%\lstinputlisting{src/geometry/convex-hull.cpp}
+
+%\subsection{Polygon Cut}
+%\lstinputlisting{src/geometry/polygon-cut.cpp}
+
+%\subsection{Pick's theorem}
+\begin{comment}
+ê²©ìì ìŒë¡ êµ¬ì±ë simple polygonìŽ ì£ŒìŽì§. $i$ë polygon ëŽë¶ì ê²©ìì  ì, $b$ë polygon ì ë¶ ì ê²©ìì  ì, $A$ë polygonì ëìŽëŒê³  í  ë, ë€ìê³Œ ê°ì ììŽ ì±ëŠœíë€.
+
+$A = i + \frac{b}{2} - 1$
+\end{comment}
+
+\section{String}
+
+\subsection{KMP}
+\lstinputlisting{src/string/kmp.cpp}
+
+%\subsection{Aho-Corasick}
+%\lstinputlisting{src/string/aho-corasick.cpp}
+
+%\subsection{Suffix Array with LCP}
+%\lstinputlisting{src/string/suffix-array-lcp.cpp}
+
+%\subsection{Suffix Tree}
+
+%\subsection{Manacher's Algorithm}
+%\lstinputlisting{src/string/manacher.cpp}
+
+
+\section{Miscellaneous}
+
+%\subsection{Fast I/O}
+%\lstinputlisting{src/miscellaneous/fastio.cpp}
+
+\subsection{Magic Numbers}
+
+ìì : $10\,007$ , $10\,009$ , $10\,111$ , $31\,567$ , $70\,001$ , $1\,000\,003$ , $1\,000\,033$ , $4\,000\,037$ , $1\,000\,000\,007$ , $1\,000\,000\,009$
+
+%\subsection{Java Examples}
+%\lstinputlisting{src/miscellaneous/example.java}
+
+\end{document}

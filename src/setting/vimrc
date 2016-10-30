@@ -1,0 +1,3 @@
+set nu ts=4
+syntax on
+colorscheme evening

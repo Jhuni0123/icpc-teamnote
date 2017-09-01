@@ -19,8 +19,8 @@ typedef struct IT{
     }
     int quary(int l,int r,int n,int nl,int nr){
         if(r<nl||nr<l)return 0;
-        if(l<=nl&&nr<r)return mx[n];
-        int m=(l+r)/2;
+        if(l<=nl&&nr<=r)return mx[n];
+        int m=(nl+nr)/2;
         return max(quary(l,r,n*2,nl,m),quary(l,r,n*2+1,m+1,nr));
     }
 
@@ -31,7 +31,7 @@ typedef struct IT{
     int update(int i,int x,int n,int nl,int nr){
         if(i<nl&&nr<i)return mx[n];
         if(nl==nr)return mx[n]=x;
-        int m = (l+r)/2;
+        int m = (nl+nr)/2;
         return mx[n]=max(update(i,x,n*2,nl,m), update(i,x,n*2+1,m+1,nr));
     }
     

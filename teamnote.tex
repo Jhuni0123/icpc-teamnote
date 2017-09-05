@@ -1,4 +1,3 @@
-% !TEX encoding = UTF-8 Unicode
 \documentclass[10pt,landscape,a4paper,twocolumn]{article}
 
 \setlength{\columnsep}{20pt}
@@ -19,6 +18,8 @@
 \usepackage[normal]{engord}
 \usepackage[svgnames,table]{xcolor}
 
+
+\usepackage{fancyhdr}
 \setmonofont{SourceCodePro-Regular.ttf}
 \setmainhangulfont{NanumMyeongjo}
 \setlength\parindent{0pt}
@@ -35,88 +36,95 @@
 %   frame=trbl
 }
 
+\lstdefinestyle{mycpp}{
+    language=[GNU]C++,
+    keywordstyle=\color{blue},
+    commentstyle=\itshape\color{purple!40!black},
+    stringstyle=\color{orange},
+}
+
 
 \begin{document}
 \tableofcontents
 
 \section{Setting}
 \subsection{Header}
-\lstinputlisting{}
+\lstinputlisting{src/Setting/Header.cpp}
 
 
 \section{String}
 \subsection{KMP}
-\lstinputlisting{}
+%\lstinputlisting{}
 
 \subsection{Aho Chorasick}
-\lstinputlisting{}
+\lstinputlisting{src/String/AhoChorasick.cpp}
 
 \subsection{Suffix array}
-\lstinputlisting{}
+\lstinputlisting{src/String/SuffixArray.cpp}
 
 \subsection{Manacher's algorithm}
-\lstinputlisting{}
+\lstinputlisting{src/String/Manacher.cpp}
 
 \subsection{Z algorithm}
-\lstinputlisting{}
+\lstinputlisting{src/String/ZAlgorithm.cpp}
 
 
-\section{Graph & Flow}
+\section{Graph \& Flow}
 \subsection{Dinic}
-\lstinputlising{}
+\lstinputlisting{src/Graph/Dinic.cpp}
 
 \subsection{Bipartite matching (simple)}
-\lstinputlising{}
+\lstinputlisting{src/Graph/BipartiteMatching.cpp}
 
 \subsection{MCMF}
-\lstinputlising{}
+%\lstinputlisting{}
 
-\subsection{Articulation Point/Edge}
-\lstinputlising{}
+\subsection{Articulation Point}
+\lstinputlisting{src/Graph/ArticulationPoint.cpp}
 
-\subsection{2SAT & answer recover}
-\lstinputlising{}
+\subsection{2SAT \& answer recover}
+\lstinputlisting{src/Graph/2SAT.cpp}
 
 \subsection{SCC}
-\lstinputlising{}
+%\lstinputlisting{}
 
 \section{Query}
 \subsection{HLD}
-\lstinputlisting{}
+\lstinputlisting{src/Query/HLD.cpp}
 
 \subsection{Centroid decomposition}
-\lstinputlisting{}
+\lstinputlisting{src/Query/CentroidDecomposition.cpp}
 
 \subsection{Mo's algorithm}
-\lstinputlisting{}
+\lstinputlisting{src/Query/Mo.cpp}
 
 \subsection{Mo's algorithm on tree}
-\lstinputlisting{}
+\lstinputlisting{src/Query/MoOnTree.cpp}
 
 \subsection{Parallel binary search}
-\lstinputlisting{}
+\lstinputlisting{src/Query/ParallelBinarySearch.cpp}
 
 
 \section{Geometry}
 \subsection{Closest pair}
-\lstinputlisting{}
+\lstinputlisting{src/Geometry/ClosestPair.cpp}
 
 \subsection{Convex hull}
-\lstinputlisting{}
+\lstinputlisting{src/Geometry/ConvexHull.cpp}
 
 \subsection{Rotating Calipers}
-\lstinputlisting{}
+\lstinputlisting{src/Geometry/RotatingCalipers.cpp}
 
 
 \section{Miscelleneous}
 \subsection{Grundy number}
-\lstinputlisting{}
+\lstinputlisting{src/Miscelleneous/GrundyNumber.cpp}
 
 \subsection{Hungarian}
-\lstinputlisting{}
+\lstinputlisting{src/Miscelleneous/Hungarian.cpp}
 
 \subsection{Convex Hull trick}
-\lstinputlisting{}
+\lstinputlisting{src/Miscelleneous/ConvexHullTrick.cpp}
 
 
 \end{document}

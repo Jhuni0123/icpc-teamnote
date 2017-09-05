@@ -3,3 +3,4 @@
 *.log
 *.toc
 *.gz
+.DS_Store

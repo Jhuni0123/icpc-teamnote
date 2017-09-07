@@ -3,22 +3,26 @@ int N,M,cnt=0;
 // DFS discover time of vertex
 int vis[100500];
 vector<int> E[100500];
-set<int> articulation;
+set<pair<int,int>> articulation;
 
 // Returns the earlist discover time that x's child can visit
-// without using x  
+// without using edge (p,x)
 int dfs(int x, int p){
 	vis[x] = ++cnt;
 	int child = 0;
 	int res = vis[x];
 	for(auto e : E[x]){
+		if(e==p) continue;
 		if(vis[e]==0){
 			// low : the earlist discover time that e can visit
-			// without using x
+			// without using edge (x,e)
 			int low = dfs(e,x);
 			child++;
-			// check if not root
-			if( p != -1 && low >= vis[x] ) articulation.insert(x);
+			// keep in mind: in edge problem, low==vis[x] case
+			// is not considered as articulation edge
+			// also, root checking is not needed
+			if( low > vis[x] )
+				articulation.insert({min(e,x),max(e,x)});
 			res = min(res,low);
 		}
 		else{
@@ -26,8 +30,7 @@ int dfs(int x, int p){
 		}
 	}
 
-	// check if root
-	if( p == -1 && child >= 2 ) articulation.insert(x);
+	// no root check needed for edge problem
 
 	return res;
 }
@@ -43,5 +46,5 @@ int main()
 	repp(i,N) if( vis[i] == 0 ) dfs(i,-1);
 	
 	printf("%d\n",(int)articulation.size());
-	for(auto e : articulation) printf("%d ",e);
+	for(auto e : articulation) printf("%d %d\n",e.first,e.second);
 }

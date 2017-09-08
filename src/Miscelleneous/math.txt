@@ -1,0 +1,9 @@
+Complete Permutation ( Derangement )
+D0 = 1, D1 = 0, D2 = 1, D3 = 2,
+Dn = (n-1)(Dn-1 + Dn-2)
+Dn = n! * sum{k=0~n}{(-1)^k / k!}
+
+Catalan Number
+Cn = (1 / (n+1)) * combination(2n,n)
+   = (2n)! / (n!(n+1)!)
+   

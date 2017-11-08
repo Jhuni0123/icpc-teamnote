@@ -1,0 +1,5 @@
+{
+    "shell_cmd": "g++ -O2 -std=c++11 \"${file}\" -o \"${file_path}/${file_base_name}\" && \"${file_path}/${file_base_name}\" < input.txt",
+    "working_dir": "${file_path}",
+    "selector": "source.c++",
+}

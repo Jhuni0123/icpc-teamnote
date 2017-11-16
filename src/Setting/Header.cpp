@@ -1,18 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <iostream>
-#include <memory.h>
-#include <math.h>
-#include <assert.h>
-#include <queue>
-#include <map>
-#include <set>
-#include <string>
-#include <algorithm>
-#include <functional>
-#include <vector>
-#include <stack>
+#include<bits/stdc++.h>
 
 using namespace std;
 typedef long long ll;
@@ -29,4 +15,4 @@ typedef pair<ll,ll> Pll;
 #define all(x) x.begin(), x.end()
 
 #define INF 987654321
-#define IINF 987654321987654321
+#define IINF 654321987654321LL

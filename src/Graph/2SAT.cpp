@@ -35,11 +35,8 @@ bool cmp1(set<int>& a, set<int>& b) {
     return *a.begin() < *b.begin();
 }
 
-
-
 int main()
 {
-    //freopen("in.txt", "r", stdin);
     geti(V); geti(M);
     int cnt = 0;
     while (M--){
@@ -75,13 +72,11 @@ int main()
         if (!vis[i]) dfs(i);
     }
 
-
     memset(vis, false, sizeof(vis));
     int k = 0;
     for (int i = vs.size()-1; i >= 0 ; i--){
         if (!vis[vs[i]]) rdfs(vs[i],k++);
     }
-
     
     for (int i = 1; i <= V; i++){
         if (cmp[i] == cmp[V + i]){

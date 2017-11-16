@@ -1,0 +1,14 @@
+G has a feasible (s,t)-flow iff G' has a saturating (s',t')-flow
+in G' total capacity out of s' and into t' are both D (sum of demands)
+saturating flow : flow with value exactly D.
+
+1. Make new source, new sink (s', t')
+
+2. for every v: 
+c'(s'->v) = sum{ d(u->v) } (give demands into v)
+c'(v->t') = sum{ d(v->w) } (take demands out of v)
+
+3. for every u->v:
+c'(u->v) = c(u->v) - d(u->v)  (difference of cap, demand)
+
+3. make t->s cap:INF

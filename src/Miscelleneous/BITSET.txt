@@ -1,0 +1,17 @@
+#include <bitset>를 이용
+bitset<개수> 이름; :: bitset 선언
+bit.set() :: 전체 비트를 1로 셋팅
+bit.set(n, true/false) :: n+1번째 비트를 1또는 0으로 셋팅
+bit.reset() :: 전체 비트를 0으로 리셋
+bit.size() :: bitset의 크기를 구한다.
+bit.any() :: 비트셋 중 하나라도 1이면 1을 반환, 모두 0일때만 0을 반환
+bit.none() :: 비트셋 중 모두가 0이어야 1을 반환
+bit.flip() :: 전체 비트를 반전
+bit.flip(n) :: n+1번째 비트를 반전
+bit.test(n) :: n+1번째 비트를 검사(1인지 0인지)
+bit.to_string() :: 전체 비트를 string화 시킨다.
+bit.to_ulong() / bit.to_ullong() :: 전체 비트를 unsigned long / unsigned long long 의 값으로 바꿔준다.
+bit.test[4] == bit[4] :: 배열처럼 이용이 가능하다.
+bit.count() :: 1의 개수를 return
+bitset opreators: 양쪽다 크기가 맞아야 사용가능하다.
+&= |= ^= <<= >>= ~ << >> == != & | ^ 

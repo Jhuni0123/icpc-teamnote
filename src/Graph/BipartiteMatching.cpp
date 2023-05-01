@@ -6,7 +6,7 @@ int dfs(int x){
     for(auto e : E[x]){
         if( yx[e] == -1 || (vis[yx[e]] == false && dfs(yx[e]) )  ){
             yx[e] = x;
-            xy[e] = e;
+            xy[x] = e;
             return 1;
         }
     }

@@ -12,7 +12,6 @@ struct MCMF{
     
     void init(int x){
         graph.resize(x+10);
-        for(auto& e : graph) e.resize(x+10);
         pv.resize(x+10); pe.resize(x+10);
         dist.resize(x+10);
         inq.resize(x+10);

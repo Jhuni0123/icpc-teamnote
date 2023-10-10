@@ -1,3 +1,6 @@
+#include <vector>
+using namespace std;
+
 // https://codeforces.com/blog/entry/18051
 struct Segtree {
     int n;
